@@ -1,0 +1,86 @@
+morse to text
+symbols = {
+    ".-": "a",
+    "-...": "b",
+    "-.-.": "c",
+    "-..": "d",
+    ".": "e",
+    "..-.": "f",
+    "--.": "g",
+    "....": "h",
+    "..": "i",
+    ".---": "j",
+    "-.-": "k",
+    ".-..": "l",
+    "--": "m",
+    "-.": "n",
+    "---": "o",
+    ".--.": "p",
+    "--.-": "q",
+    ".-.": "r",
+    "...": "s",
+    "-": "t",
+    "..-": "u",
+    "...-": "v",
+    ".--": "w",
+    "-..-": "x",
+    "-.--": "y",
+    "--..": "z"
+}
+print("Use * to separate the letters and space to separate words.")
+msg = input("Enter your msg in Morse\n")              
+out = []
+letter = []
+j = -1
+for i in msg.split(' '):
+    j += 1
+    letter += [i.split("*")]
+    for k in range(len(letter[j])):
+        out += symbols.get(letter[j][k], '?')
+    out += ' '
+print('Your msg is: ', end = '')
+print(''.join(out))
+
+
+
+
+
+
+
+text to morse:
+symbols = {
+    "a": ".-",
+    "b": "-...",
+    "c": "-.-.",
+    "d": "-..",
+    "e": ".",
+    "f": "..-.",
+    "g": "-.",
+    "h": "....",
+    "i": "..",
+    "j": ".---",
+    "k": "-.-",
+    "l": ".-..",
+    "m": "--",
+    "n": "-.",
+    "o": "---",
+    "p": ".--.",
+    "q": "--.-",
+    "r": ".-.",
+    "s": "...",
+    "t": "-",
+    "u": "..-",
+    "v": "...-",
+    "w": ".--",
+    "x": "-..-",
+    "y": "-.--",
+    "z": "--..",
+}
+#the user has to tyoe a word
+ask = input("type: ")
+length = len(ask)
+output = ""
+for i in range(length):
+    if ask[i] in symbols.keys():
+        output = output + " " + symbols.get(ask[i])
+print(output)
